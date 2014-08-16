@@ -2,3 +2,4 @@ username:
 api_token:
 domain:
 record_id:
+server_secret:
