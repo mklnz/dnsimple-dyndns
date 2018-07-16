@@ -1,5 +1,5 @@
 class DnsimpleDyndns
-  CONFIG_PATH = File.expand_path('./config')
+  CONFIG_PATH = File.expand_path('../../config', __FILE__)
   CONFIG_FILE = File.join(CONFIG_PATH, 'config.yml')
   TTL = 60
 
