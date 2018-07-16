@@ -1,13 +1,16 @@
-require 'sinatra'
-require_relative 'lib/dns_updater'
+require 'rubygems'
+require 'bundler/setup'
 
-set :bind, '0.0.0.0'
+# require 'byebug'
 
-config = YAML.load_file(File.join(__dir__, "config/config.yml"))
+require 'dnsimple'
+require 'active_support'
+require 'active_support/core_ext'
+require 'yaml'
+require 'open-uri'
 
-get '/update/:record/:ip' do
-  if params[:s] == config["server_secret"]
-    DnsUpdater.update(params[:record], params[:ip])
-    "UPDATED"
-  end
-end
+require_relative 'lib/dnsimple_dyndns'
+
+dnsimple_dyndns = DnsimpleDyndns.new
+dnsimple_dyndns.load_config
+dnsimple_dyndns.update_all

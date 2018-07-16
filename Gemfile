@@ -1,4 +1,9 @@
 source 'https://rubygems.org'
 
-gem 'sinatra', '~> 1.4.5'
-gem 'dnsimple-ruby', '~> 1.7.0'
+gem 'activesupport', '~> 5.0'
+gem 'dnsimple', '~> 4.0'
+gem 'whenever', require: false
+
+group :development do
+  gem 'byebug'
+end

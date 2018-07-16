@@ -1,4 +1,8 @@
-username:
-api_token:
-domain:
-server_secret:
+---
+wan_ip:
+updated_at:
+entries:
+- account_id:
+  access_token:
+  domain:
+  record_id:
